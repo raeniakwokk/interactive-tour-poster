@@ -23,6 +23,9 @@ body{
     padding: 20px;
     transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
 }
+.card:hover{
+    transform: scale(1.05);
+}
 .card-content:has(> .card-text-default) {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -156,4 +159,13 @@ h6{
     text-align: right;
     margin-right: 30px;
     margin-bottom: -20px;
+}
+.dot{
+    width: 10px;
+    height: 10px;
+    background-color: rgb(229, 113, 117);
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
 }
