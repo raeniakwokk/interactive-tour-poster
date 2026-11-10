@@ -9,7 +9,7 @@ body{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 100px;
-    padding: 220px 100px 50px 100px;
+    padding: 50px 100px 50px 100px;
 }
 .card{
     background-color: rgb(233, 228, 224);
@@ -21,16 +21,41 @@ body{
     align-items: center;
     justify-content: center;
     padding: 20px;
+    transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+.card-content:has(> .card-text-default) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+}
+.card-content:has(> .card-text-default) > .card-row {
+    grid-area: 1 / 1;
+}
+.card-text-default, .card-text-hover {
+    grid-area: 2 / 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+.card-text-hover{
+    opacity: 0;
+    pointer-events: none;
+}
+.card:hover .card-text-default {
+    opacity: 0;
+    pointer-events: none;
+}
+.card:hover .card-text-hover {
+    opacity: 1;
+    pointer-events: auto;
 }
 h1{
-    color: rgb(213, 181, 193);
+    color: rgb(229, 113, 117);
     font-family: "Lavishly Yours", cursive;
     font-size: 70px;
-    margin-top: -10px;
     margin-bottom: -50px;
-    margin-left: 100px;
-    position: fixed;
-    mix-blend-mode:difference;
+    padding-top: 45px;
 }
 h2{
     font-family: "Lavishly Yours", cursive;
@@ -47,9 +72,6 @@ h3{
     font-size: 24px;
     margin-top: 120px;
     margin-bottom: 10px;
-    margin-left: 100px;
-    position: fixed;
-    mix-blend-mode: difference;
 }
 h4{
     text-align: center;
