@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: rgb(41, 39, 39);
+    background-color: rgb(39, 39, 41);
     font-family: "Inconsolata", monospace;
 }
 .grid-container{
@@ -39,6 +39,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 20px;
     transition: opacity 0.3s ease;
 }
 .card-text-hover{
@@ -54,11 +55,11 @@ body{
     pointer-events: auto;
 }
 h1{
-    color: rgb(229, 113, 117);
+    color: rgb(220, 67, 72);
     font-family: "Lavishly Yours", cursive;
-    font-size: 70px;
-    margin-bottom: -50px;
-    padding-top: 45px;
+    font-size: 120px;
+    margin-bottom: -100px;
+    padding-top: 20px;
 }
 h2{
     font-family: "Lavishly Yours", cursive;
@@ -83,8 +84,22 @@ h4{
     margin-top: 10px;
     margin-bottom: 20px;
 }
+h5{
+    font-family: "Long Cang", cursive;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    color: rgb(41, 39, 39);
+    font-weight: normal;
+    margin: -5px;
+}
 .lavishly-yours-regular{
   font-family: "Lavishly Yours", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.long-cang-regular {
+  font-family: "Long Cang", cursive;
   font-weight: 400;
   font-style: normal;
 }
@@ -96,6 +111,11 @@ h4{
   font-variation-settings:
     "wdth" 100;
 }
+.yuji-syuku-regular {
+  font-family: "Yuji Syuku", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 button{
     align-items: center;
     display: inline-block;
@@ -103,11 +123,16 @@ button{
     margin-bottom: 15px;
     cursor: pointer;
     background-color: rgb(213, 181, 193);
+    color: rgb(0, 0, 0);
     border: none;
     border-radius: 4px;
     font-family: "Inconsolata", monospace;
     font-size: 10px;
     font-weight: 400;
+}
+button:hover{
+    background-color: rgb(220, 67, 72);
+    color: rgb(233, 228, 224);
 }
 .card-image-container{
     width: 200px;
@@ -140,6 +165,13 @@ h6{
     margin-top: 0px;
     font-weight: 400;
 }
+p{
+    color: rgb(220, 67, 72);
+    font-family: "Lavishly Yours", cursive;
+    font-size: 70px;
+    margin-bottom: -200px;
+    line-height: 0.8;
+}
 .card-row {
     display: flex;
     justify-content: space-between;
@@ -163,9 +195,77 @@ h6{
 .dot{
     width: 10px;
     height: 10px;
-    background-color: rgb(229, 113, 117);
+    background-color: rgb(220, 67, 72);
     position: fixed;
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
+}
+body,
+body * {
+    cursor: none;
+}
+.blank-card{
+    background-color: rgb(39, 39, 41);
+    height: 400px;
+    width: 300px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px;
+    text-align: center;
+}
+.blank-card-middle{
+    background-color: rgb(39, 39, 41);
+    height: 400px;
+    width: 300px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 20px;
+    text-align: right;
+}
+.blank-card-middle p{
+    margin: 0;
+}
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+        justify-items: center;
+        padding: 32px 16px;
+    }
+
+    .grid-container > div:first-child {
+        width: 100%;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: clamp(72px, 20vw, 110px);
+        margin-bottom: 0;
+        padding-top: 0;
+    }
+
+    .card {
+        width: min(300px, 100%);
+    }
+
+    .blank-card,
+    .blank-card-middle {
+        height: clamp(100px, 25vw, 160px);
+        width: min(300px, 100%);
+    }
+
+    .blank-card h3 {
+        margin: 0;
+    }
+}
+a{
+    color: inherit;
+    text-decoration: none;
 }
